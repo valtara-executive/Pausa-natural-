@@ -3,38 +3,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Valtara | Bienestar Muscular Integral</title>
+    <title>Pausa Natural | Bienestar Muscular Integral</title>
     
+    <!-- Fuentes Premium -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
     
+    <!-- Íconos -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     
+    <!-- Vinculación de Estilos Globales -->
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
 
+    <!-- CABECERA DE LUJO (Fija) -->
     <header class="luxury-header">
+        <!-- Logotipo en la parte superior izquierda -->
         <a href="#" class="logo" onclick="navigateTo('inicio')">
-            <i class="fa-solid fa-leaf"></i> Valtara <span>Therapy</span>
+            <img src="assets/images/logo.png" alt="Pausa Natural Logo" class="logo-img" onerror="this.style.display='none';">
+            Pausa <span>Natural</span>
         </a>
+        
+        <!-- Navegación Central -->
         <nav class="elegant-nav">
             <button class="nav-link active" onclick="navigateTo('inicio')">Inicio</button>
             <button class="nav-link" onclick="navigateTo('catalogo')">Catálogo de Masajes</button>
             <button class="nav-link" onclick="navigateTo('chat')">Chatea con Nosotros</button>
         </nav>
+        
+        <!-- Botón de acción en la parte superior derecha -->
         <div class="header-actions">
             <button class="btn-contact-gold" onclick="navigateTo('chat')">
-                <i class="fa-solid fa-comment-dots"></i> Consultar
+                <i class="fa-solid fa-calendar-check"></i> Reservar Ya
             </button>
         </div>
     </header>
 
+    <!-- CONTENEDOR PRINCIPAL DE LA SPA -->
     <main class="app-content">
         
+        <!-- ==========================================
+             MÓDULO 1: INICIO
+             ========================================== -->
         <section id="inicio" class="page-section active" style="padding-top: 0;">
             
+            <!-- Hero Carrusel Dinámico -->
             <div class="hero-carousel" id="homeCarousel">
                 <div class="carousel-slide active" style="background-image: url('assets/images/hero-placeholder.jpg');">
                     <div class="carousel-content">
@@ -44,51 +59,11 @@
                     </div>
                 </div>
                 <div class="carousel-controls" id="carouselDots">
-                    </div>
+                    <!-- Los puntos de control se generan dinámicamente en app.js -->
+                </div>
             </div>
 
-            <section class="signature-section">
-                <div class="signature-container">
-                    <div class="signature-text">
-                        <h2>El sello que distingue <br>tu experiencia</h2>
-                        <p>Tú eres el protagonista. Personaliza tu terapia de masoterapia de acuerdo a tus preferencias y necesidades biológicas para elevar tu estado de salud a un nivel superior.</p>
-                        <button onclick="navigateTo('chat')" class="btn-contact-gold" style="background: transparent; color: var(--dorado); border: 1px solid var(--dorado);">Personalizar Ahora</button>
-                    </div>
-                    <div class="steps-grid">
-                        <div class="step-item">
-                            <div class="step-number">1</div>
-                            <div class="step-icon"><i class="fa-solid fa-palette"></i></div>
-                            <h4>Cromoterapia</h4>
-                        </div>
-                        <div class="step-item">
-                            <div class="step-number">2</div>
-                            <div class="step-icon"><i class="fa-solid fa-music"></i></div>
-                            <h4>Musicoterapia</h4>
-                        </div>
-                        <div class="step-item">
-                            <div class="step-number">3</div>
-                            <div class="step-icon"><i class="fa-solid fa-pump-soap"></i></div>
-                            <h4>Aromaterapia</h4>
-                        </div>
-                        <div class="step-item">
-                            <div class="step-number">4</div>
-                            <div class="step-icon"><i class="fa-solid fa-hand-holding-hand"></i></div>
-                            <h4>Presión Deseada</h4>
-                        </div>
-                        <div class="step-item">
-                            <div class="step-number">5</div>
-                            <div class="step-icon"><i class="fa-solid fa-spa"></i></div>
-                            <h4>Textura Aceites</h4>
-                        </div>
-                        <div class="step-item">
-                            <div class="step-number">6</div>
-                            <div class="step-icon"><i class="fa-solid fa-mug-hot"></i></div>
-                            <h4>Bebida Relajante</h4>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
+            <!-- Testimonios Clínicos -->
             <section class="testimonials-section">
                 <div class="testi-container">
                     <h2>Opiniones de Nuestros Pacientes</h2>
@@ -98,7 +73,7 @@
                                 <span class="testi-name">Alejandro Vargas</span>
                                 <span class="testi-time">Hace 2 horas</span>
                             </div>
-                            <p class="testi-text">"El nivel de masoterapia clínica superó mis expectativas. Lograron liberar toda la tensión acumulada en la espalda tras semanas de estrés laboral. Sumamente profesionales."</p>
+                            <p class="testi-text">"El nivel de masoterapia clínica de Pausa Natural superó mis expectativas. Lograron liberar toda la tensión acumulada en la espalda tras semanas de estrés laboral. Sumamente profesionales."</p>
                         </div>
                         <div class="testi-card">
                             <div class="testi-header">
@@ -112,15 +87,22 @@
             </section>
         </section>
 
+        <!-- ==========================================
+             MÓDULO 2: CATÁLOGO EXCLUSIVO DE MASAJES
+             ========================================== -->
         <section id="catalogo" class="page-section">
             <div class="interior-header">
                 <h2>Catálogo de <span>Terapias</span></h2>
                 <p>Masoterapia clínica y rituales de relajación profunda diseñados para restablecer tu equilibrio muscular.</p>
             </div>
             
+            <!-- Contenedor único donde app.js renderizará las tarjetas M1, M2... -->
             <div id="grid-masajes" class="services-grid"></div>
         </section>
 
+        <!-- ==========================================
+             MÓDULO 3: ASISTENTE DE CHAT INTERACTIVO
+             ========================================== -->
         <section id="chat" class="page-section">
             <div class="interior-header">
                 <h2>Asistente <span>Interactiva</span></h2>
@@ -129,15 +111,19 @@
 
             <div class="chat-wrapper">
                 <div class="chat-box">
+                    <!-- Historial de mensajes simulado -->
                     <div class="chat-messages" id="chatMessages">
                         <div class="message bot-message">
-                            <p>¡Hola! Bienvenido al asistente inteligente de Valtara. ¿En qué podemos ayudarte hoy? Por favor, selecciona una opción:</p>
+                            <p>¡Hola! Bienvenido al asistente inteligente de Pausa Natural. ¿En qué podemos ayudarte hoy? Por favor, selecciona una opción:</p>
                         </div>
                     </div>
 
+                    <!-- Panel de Respuestas Automatizadas por Botones -->
                     <div class="chat-options-panel" id="chatOptionsPanel">
-                        </div>
+                        <!-- Los botones pre-entrenados se inyectan desde app.js -->
+                    </div>
 
+                    <!-- Panel de Entrada de Texto Inteligente (Oculto por defecto) -->
                     <div class="chat-input-area" id="chatInputArea" style="display: none;">
                         <textarea 
                             id="customQueryInput" 
@@ -154,6 +140,7 @@
 
     </main>
 
+    <!-- NAVEGACIÓN INFERIOR (Solo visible en dispositivos móviles) -->
     <nav class="mobile-nav">
         <button class="mobile-btn active" onclick="navigateTo('inicio')">
             <i class="fa-solid fa-house"></i> <span>Inicio</span>
@@ -166,20 +153,21 @@
         </button>
     </nav>
 
+    <!-- PIE DE PÁGINA -->
     <footer>
         <div class="footer-logo">
-            <i class="fa-solid fa-leaf"></i> Valtara <span>Therapy</span>
+            Pausa <span>Natural</span>
         </div>
         <p style="color: var(--beige-oscuro);">El equilibrio perfecto para tu bienestar muscular integral.</p>
         <div class="social-links">
             <a href="#"><i class="fa-brands fa-instagram"></i></a>
             <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
         </div>
-        <p style="margin-top: 30px; font-size: 0.8rem; color: rgba(255,255,255,0.3);">© 2026 Valtara Therapy. Todos los derechos reservados.</p>
+        <p style="margin-top: 30px; font-size: 0.8rem; color: rgba(255,255,255,0.3);">© 2026 Pausa Natural. Todos los derechos reservados.</p>
     </footer>
 
+    <!-- VINCULACIÓN DE LOGICA JAVASCRIPT MODULAR -->
     <script src="js/contenido.js"></script>
-    
     <script src="js/app.js"></script>
 </body>
 </html>
