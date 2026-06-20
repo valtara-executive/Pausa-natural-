@@ -109,3 +109,10 @@ const opcionesChatbot = [
         habilitaInput: true 
     }
 ];
+// Frases dinámicas para el efecto máquina de escribir en el Inicio
+const textosDinamicos = [
+    "Masoterapia clínica especializada para tu salud muscular.",
+    "Instalaciones de lujo diseñadas para tu descanso absoluto.",
+    "Liberación del estrés diario con expertos en anatomía humana.",
+    "Tratamientos térmicos y mecánicos adaptados a tu cuerpo."
+];
