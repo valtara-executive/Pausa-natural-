@@ -20,9 +20,9 @@
 
     <!-- CABECERA DE LUJO (Fija) -->
     <header class="luxury-header">
-        <!-- Logotipo en la parte superior izquierda -->
+        <!-- Logotipo en la parte superior izquierda apuntando directo a assets/ -->
         <a href="#" class="logo" onclick="navigateTo('inicio')">
-            <img src="assets/images/logo.png" alt="Pausa Natural Logo" class="logo-img" onerror="this.style.display='none';">
+            <img src="assets/logo.png" alt="Pausa Natural Logo" class="logo-img" onerror="this.style.display='none';">
             Pausa <span>Natural</span>
         </a>
         
@@ -45,23 +45,55 @@
     <main class="app-content">
         
         <!-- ==========================================
-             MÓDULO 1: INICIO
+             MÓDULO 1: INICIO (Rediseñado con Textos Dinámicos)
              ========================================== -->
-        <section id="inicio" class="page-section active" style="padding-top: 0;">
+        <section id="inicio" class="page-section active" style="padding-top: 0; padding-left: 0; padding-right: 0;">
             
-            <!-- Hero Carrusel Dinámico -->
+            <!-- Hero Carrusel Inmersivo sobre Terapias -->
             <div class="hero-carousel" id="homeCarousel">
-                <div class="carousel-slide active" style="background-image: url('assets/images/hero-placeholder.jpg');">
+                <!-- Slide 1: General (Apuntando a assets/hero-placeholder.jpg) -->
+                <div class="carousel-slide active" style="background-image: url('assets/hero-placeholder.jpg');">
                     <div class="carousel-content">
                         <h1>Bienestar Muscular & <br><span>Relajación Absoluta</span></h1>
-                        <p>Santuario clínico diseñado exclusivamente para tu renovación física y mental.</p>
+                        <p>Un santuario clínico diseñado exclusivamente para tu renovación física y liberación del estrés.</p>
                         <button class="btn-contact-gold" style="font-size: 1.1rem; padding: 15px 35px;" onclick="navigateTo('catalogo')">Explorar Terapias</button>
                     </div>
                 </div>
+                <!-- Slide 2: Masaje de Descarga (Apuntando a assets/F1.jpg) -->
+                <div class="carousel-slide" style="background-image: url('assets/F1.jpg');">
+                    <div class="carousel-content">
+                        <h1>Liberación de <span>Tensión Muscular</span></h1>
+                        <p>Técnicas avanzadas de masoterapia para aliviar dolores crónicos y contracturas graves.</p>
+                        <button class="btn-contact-gold" style="font-size: 1.1rem; padding: 15px 35px;" onclick="navigateTo('chat')">Consultar Especialista</button>
+                    </div>
+                </div>
+                <!-- Slide 3: Piedras Calientes (Apuntando a assets/F7.jpg) -->
+                <div class="carousel-slide" style="background-image: url('assets/F7.jpg');">
+                    <div class="carousel-content">
+                        <h1>Ritual de <span>Piedras Calientes</span></h1>
+                        <p>El calor del basalto volcánico penetrando profundamente en tus grupos musculares.</p>
+                        <button class="btn-contact-gold" style="font-size: 1.1rem; padding: 15px 35px;" onclick="navigateTo('catalogo')">Ver Tarifas y Tiempos</button>
+                    </div>
+                </div>
+                
+                <!-- Controles del Carrusel Principal -->
                 <div class="carousel-controls" id="carouselDots">
-                    <!-- Los puntos de control se generan dinámicamente en app.js -->
+                    <div class="dot active" onclick="setSlide(0)"></div>
+                    <div class="dot" onclick="setSlide(1)"></div>
+                    <div class="dot" onclick="setSlide(2)"></div>
                 </div>
             </div>
+
+            <!-- SECCIÓN EXTRA: TEXTO DINÁMICO (Máquina de escribir) -->
+            <section class="typing-section">
+                <div class="typing-container">
+                    <h3>¿Por qué elegir Pausa Natural?</h3>
+                    <!-- Este contenedor recibirá las frases aleatorias desde el script -->
+                    <div class="typing-text-wrapper">
+                        <span id="typingTarget" class="typing-text"></span><span class="typing-cursor">|</span>
+                    </div>
+                </div>
+            </section>
 
             <!-- Testimonios Clínicos -->
             <section class="testimonials-section">
@@ -96,22 +128,28 @@
                 <p>Masoterapia clínica y rituales de relajación profunda diseñados para restablecer tu equilibrio muscular.</p>
             </div>
             
-            <!-- Contenedor único donde app.js renderizará las tarjetas M1, M2... -->
+            <!-- Contenedor único donde app.js renderizará las tarjetas M1, M2... con fotos assets/F.jpg -->
             <div id="grid-masajes" class="services-grid"></div>
         </section>
 
         <!-- ==========================================
-             MÓDULO 3: ASISTENTE DE CHAT INTERACTIVO
+             MÓDULO 3: ASISTENTE DE CHAT (Pantalla Completa Fija)
              ========================================== -->
-        <section id="chat" class="page-section">
-            <div class="interior-header">
-                <h2>Asistente <span>Interactiva</span></h2>
-                <p>Selecciona una opción para guiarte en tu consulta o solicita hablar directamente con nosotros.</p>
-            </div>
-
-            <div class="chat-wrapper">
+        <section id="chat" class="page-section chat-fullscreen-section" style="padding: 80px 0 0 0;">
+            <div class="chat-fullscreen-wrapper">
                 <div class="chat-box">
-                    <!-- Historial de mensajes simulado -->
+                    <!-- Encabezado interno del Asistente -->
+                    <div class="chat-header-identity">
+                        <div class="chat-bot-avatar">
+                            <i class="fa-solid fa-robot"></i>
+                        </div>
+                        <div class="chat-bot-title-info">
+                            <h4>Asistente Inteligente</h4>
+                            <span>Pausa Natural Bot • En Línea</span>
+                        </div>
+                    </div>
+
+                    <!-- Historial de mensajes (Scroll interno exclusivamente) -->
                     <div class="chat-messages" id="chatMessages">
                         <div class="message bot-message">
                             <p>¡Hola! Bienvenido al asistente inteligente de Pausa Natural. ¿En qué podemos ayudarte hoy? Por favor, selecciona una opción:</p>
@@ -140,7 +178,7 @@
 
     </main>
 
-    <!-- NAVEGACIÓN INFERIOR (Solo visible en dispositivos móviles) -->
+    <!-- NAVEGACIÓN INFERIOR MÓVIL -->
     <nav class="mobile-nav">
         <button class="mobile-btn active" onclick="navigateTo('inicio')">
             <i class="fa-solid fa-house"></i> <span>Inicio</span>
@@ -153,7 +191,7 @@
         </button>
     </nav>
 
-    <!-- PIE DE PÁGINA -->
+    <!-- PIE DE PÁGINA (Con créditos requeridos de ingeniería) -->
     <footer>
         <div class="footer-logo">
             Pausa <span>Natural</span>
@@ -163,7 +201,11 @@
             <a href="#"><i class="fa-brands fa-instagram"></i></a>
             <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
         </div>
-        <p style="margin-top: 30px; font-size: 0.8rem; color: rgba(255,255,255,0.3);">© 2026 Pausa Natural. Todos los derechos reservados.</p>
+        <!-- Sello de desarrollo requerido -->
+        <p style="margin-top: 30px; font-size: 0.8rem; color: rgba(255,255,255,0.25); letter-spacing: 0.5px;">
+            Desarrollado por el equipo de ingeniería <strong>Grupo Gevizz</strong>
+        </p>
+        <p style="margin-top: 5px; font-size: 0.75rem; color: rgba(255,255,255,0.15);">© 2026 Pausa Natural. Todos los derechos reservados.</p>
     </footer>
 
     <!-- VINCULACIÓN DE LOGICA JAVASCRIPT MODULAR -->
